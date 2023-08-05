@@ -1,0 +1,444 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;700&display=swap');
+*{
+    margin: 0;
+    box-sizing: border-box;
+}
+
+/* --root{
+    -color-primario:rgb(255, 183, 0);
+} */
+/* Cuerpo de la pàgina*/
+body{
+    font-family: 'Raleway', sans-serif;
+    background-color: rgba(151, 120, 25, 0.5);
+}
+
+.encabezado__logo{
+    height: 80px;
+    width: 80px;
+    border-radius: 50%;
+    margin: 1em;
+}
+
+
+/*.encabezado__nav{
+    width: 95%;
+    margin: 10px auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+.encabezado__div{
+    display: flex; Caja flexible para dispotivos moviles
+    gap: 20px;           Espacios entre iconos
+    display: block;
+}
+
+.encabezado__icon{
+    width: 30px;
+} */
+
+
+/*Botòn de menù*/
+.toggle-menu{   
+    position: absolute; 
+    top: 2.5rem; /* Hacia abajo*/
+    right: 1rem; /*Movimiento hacia la derecha*/
+    cursor:pointer; /*Movimiento del menù*/ 
+    z-index: 1;
+    
+}
+
+
+.main-menu{
+    list-style:none; /*Estilo de la lista, sin viñetas*/
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    align-items: center; /*Menù acomodado al centro*/
+    transform: translateY(-130%);  /*Movimiento del menù, se desliza en el eje de las Y */
+    transition: transform 0.6s; /*Tiempo en que tarda en esconderse el menù*/
+    position: absolute;
+}
+
+/*Para que aparezca el menù*/
+.main-menu--show{
+    transform: translateY(0);
+}
+
+
+/*Cajas del menù*/
+.main-menu__item{
+    padding: 4rem;
+    font-size:15px;
+    
+
+}
+/*Texto del menù*/
+.main-menu__link{
+    text-decoration:none;
+    color:#f2f0ef;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-weight: 700; /*Relleno de la letra*/
+    letter-spacing: 5px;
+   
+}
+/*secciòn de la imagen principal*/
+.encabezado__section{
+    width: 100%;
+    height: 500px;
+    background-image: url(./img/stout-malta-horizontal.webp);
+    background-size:contain;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    
+    
+}
+/*cinta*/
+.encabezado__article{
+    width: 1000%;
+    height: 45%;
+    background-color: rgba(21, 21, 3, 0.5); /*Opacidad ocupa el cuarto lugar va del o al 1*/
+    text-align: center;
+    padding-top: .8em;
+}
+/*Letras de parràfo*/
+.encabezado__p{
+    color: #fff;
+    font-size: 25px;
+}
+/*H1*/
+.encabezado__h1{
+    color: rgb(255, 255, 9);
+    font-size: 4em;
+}
+/*Boton*/
+.encabezado__a{
+    display: inline-block;
+    background-color: rgb(255, 183, 0);
+    color: #fff;
+    text-decoration: none;
+    padding: 15px 20px;
+    margin-top: 10px;
+}
+
+.product_container{
+    width: 100%;
+    margin:0 auto;
+    display:grid;
+    grid-template-columns: repeat(5,1fr);
+}
+
+.product {
+	margin:10%;
+	padding: 30px;
+	background-color: lightcoral;
+	text-align: center;
+}
+
+.boton_producto{
+    display: inline-block;
+    background:rgb(211, 163, 50);
+    color:#f8f3ec;
+    border: 2px solid;
+    border-radius:1em ;
+    padding: 1em 2em;
+    text-decoration: none;
+    padding: 15px 20px;
+    transition: all 0.25;
+    margin-top: 30px;
+}
+
+.boton_producto:hover{
+    background-color: #975c18;
+    color:beige;
+    border-color:rgb(236, 186, 186);
+    transform: translateY(-0.25);
+    border:2px solid;
+}
+
+
+.product-cerveza{
+    width: 100%;
+    max-width: 200px;
+    max-height: 500px;
+}
+
+.carousel .slide{
+    
+    width: 50%;
+    margin: 0 auto;
+    
+}
+.carousel-inner{
+    margin-top:50px;
+    background-color:rgb(255, 255, 255);
+}
+
+.slider__img{
+    width: 200px;
+    height:340px;
+    border-radius: 1em;
+    object-fit: cover;
+    display: block;
+    margin: 0 auto;
+    
+}
+
+
+.subtitulo{
+    color:black;
+    text-align: center;
+}
+.parrafo{
+    color: black;
+    text-align: center;
+    width: 20%;
+    margin-left: 40%;
+    text-align: justify;
+   
+}
+
+.carousel-control-prev-icon{
+    filter:invert();
+    position:absolute;
+    left:150%;
+}
+
+.carousel-control-next-icon{
+    filter:invert();
+    position:absolute;
+    right:150%;
+}
+
+.carousel-item{
+    text-align: center;
+}
+.cotizacion{
+    display: inline-block;
+    background-color: rgb(255, 183, 0);
+    color: #fff;
+    text-decoration: none;
+    padding: 15px 20px;
+    margin-top: 5px;
+}
+@media (max-width:1024px) {
+    
+
+    .encabezado__article{
+        width: 100%;
+    }
+
+    .encabezado__div{
+        display: block;
+    }
+
+    .product_container{
+        display:grid;
+        grid-template-columns: repeat(3,1fr);
+
+    }
+}
+
+/* Cuando se aumente el menú mayor o igual a 768 la forma del menu cambia */
+@media (min-width:768px){
+
+    .toggle-menu{
+        display: none;
+    }
+
+    .main-menu{
+        flex-direction: row;
+        transform: translateY(0);
+        justify-content: flex-end;
+    }
+
+    /* .main-menu__item{
+        position: relative;
+        left: 80px;
+    } */
+
+    .main-menu__item{
+        padding: 1rem;
+    }
+
+    .carousel-inner{
+        margin-top:80px;
+        background-color:rgb(255, 255, 255);
+    }
+    .carousel-control-prev{
+        height: 340px;
+    }
+    .carousel-control-next{
+        height: 340px;
+    }
+    .carousel-control-prev-icon{
+        filter:invert();
+        position:absolute;
+        left:100px;
+    }
+    
+    .carousel-control-next-icon{
+        filter:invert();
+        position:absolute;
+        left:0px;
+    }
+
+    .parrafo{
+        color: black;
+        text-align: center;
+        width:100%;
+        margin-left: 0;
+    }
+    
+    .parrafo{
+        color: black;
+        text-align: center;
+        width:100%;
+        margin-left:0px;
+    }
+
+}
+
+/*Media queri 2*/
+@media (max-width:480px){
+    .product{
+        
+       
+        opacity:0.9;
+        display:block; /* Aqui ya no aplica el border radius*/
+        /*La principal diferencia entre ambas reglas es que display: none no reserva el espacio del elemento mientras que visibility: hidden sí.*/
+        
+
+    }
+
+    .encabezado__div{
+        display: block;
+    }
+
+    .encabezado__section{
+        width: 100%;
+        height: 580px;
+    }
+
+    .enlaces{
+        display: none;
+    }
+
+    
+    .product_container{
+        display:grid;
+        grid-template-columns: repeat(1,1fr);
+
+    }
+
+    .main-menu{
+        background-color: #151514be;
+        
+    }
+    .main-menu__item{
+        padding: 2rem;
+    }
+
+    .carousel-inner{
+        margin-top:80px;
+        background-color:rgb(255, 255, 255);
+    }
+    .carousel-control-prev{
+        height: 340px;
+    }
+    .carousel-control-next{
+        height: 340px;
+    }
+    .carousel-control-prev-icon{
+        filter:invert();
+        position:absolute;
+        left:50px;
+    }
+    
+    .carousel-control-next-icon{
+        filter:invert();
+        position:absolute;
+        left:-10px;
+    }
+
+    .parrafo{
+        color: black;
+        text-align: center;
+        width:100%;
+        margin-left: 0;
+    }
+}
+
+
+/* Los estilos se aplican solo a la escala que definimos, al aumentar cambia a nuestra propiedad normal */ /*Media Queri 1*/
+@media (max-width:320px){
+    .product{
+        
+       
+        opacity:0.9;
+        display:block; /* Aqui ya no aplica el border radius*/
+        /*La principal diferencia entre ambas reglas es que display: none no reserva el espacio del elemento mientras que visibility: hidden sí.*/
+        
+
+    }
+
+    .encabezado__div{
+        display: block;
+    }
+
+    .enlaces{
+        display: none;
+    }
+
+    
+    .product_container{
+        display:grid;
+        grid-template-columns: repeat(1,1fr);
+
+    }
+
+    .encabezado__h1{
+        font-size: 2rem;
+    }
+
+    .carousel-control-prev{
+        height: 340px;
+    }
+
+    .carousel-control-next{
+        height: 340px;
+    }
+    .carousel-control-prev-icon{
+        filter:invert();
+        position:absolute;
+        left:17px;
+    }
+    
+    .carousel-control-next-icon{
+        filter:invert();
+        position:absolute;
+        left:0px;
+    }
+
+    .parrafo{
+        color: black;
+        text-align: center;
+        width:100%;
+        margin-left: 0;
+    }
+}
+
+
+
+
+
+
+
+
+/*dudas: poner una sola clase por div o poner una sola clase para imagenes */
+
